@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Blog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Blog</h1>
+<table>
+    <thead>
+        <tr>
+            <th>№</th>
+            <th>Blog Title</th>
+            <th>Blog Content</th>
+            <th>Blog Image</th>
+            <th>Blog Date</th>
+            <th colspan="2"><a href="/admin/insertblog">+</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bl in ViewBag.Blogs)
+        {
+            <tr>
+                <td>@(ViewBag.Blogs.IndexOf(bl) + 1)</td>
+                <td>@(bl.BlogTitle)</td>
+                <td>@(bl.BlogContent)</td>
+                <td> <img src="~/home_assets/images/@(bl.BlogImgUrl)" /></td>
+                <td>@(bl.BlogDate)</td>
+                <td><a href="/admin/editfurniture/@bl.BlogId">Edit</a></td>
+                <td><a href="/admin/delfurniture/@bl.BlogId">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

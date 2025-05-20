@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Furniture";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FurnitureCategory</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Category Name</th>
+                <th colspan="2"><a href="/admin/newfurniturecategory">+</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var fc in ViewBag.FurnCat)
+            {
+                <tr>
+                    <td>@(ViewBag.FurnCat.IndexOf(fc)+1)</td>
+                    <td>@(fc.CategoryName)</td>
+                    <td><a href="/admin/editfurniturecategory/@fc.CategoryId">Edit</a></td>
+                    <td><a href="/admin/delfurniturecategory/@fc.CategoryId">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

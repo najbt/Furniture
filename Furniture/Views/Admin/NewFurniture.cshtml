@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "NewFurniture";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form action="/admin/NewFurniture" method="post" enctype="multipart/form-data">
+    <input type="text" name="FurnitureName" />
+    <input type="text" name="FurniturePrice" />
+    <input type="file" name="FurnitureImgUrl" />
+    <select name="CategoryId">
+        <option hidden>Choose Category</option>
+            @foreach (var c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryId">@c.CategoryName</option>
+            }
+    </select>
+    <input type="submit" value="update"/>
+</form>
+

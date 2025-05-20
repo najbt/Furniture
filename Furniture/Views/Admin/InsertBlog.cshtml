@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "InsertBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>InsertBlog</h1>
+
+<form action="/admin/InsertNewBlog" method="post" enctype="multipart/form-data">
+    <input type="text" name="BlogTitle" />
+    <input type="text" name="BlogContent"/>
+    <input type="file" name="BlogImgUrl" />
+    <input type="submit" />
+</form>

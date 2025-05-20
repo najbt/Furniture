@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Furniture";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditFurnitureCategory</title>
+</head>
+<body>
+    <form action="/admin/UpdateFurnitureCategory/@ViewBag.edit_f.CategoryId" method="post">
+        <input type="text" name="CategoryName" value="@ViewBag.edit_f.CategoryName" />
+        <input type="Submit" value="Upload"/>
+    </form>
+</body>
+</html>
